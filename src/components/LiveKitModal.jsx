@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 import { LiveKitRoom, RoomAudioRenderer } from '@livekit/components-react';
 import '@livekit/components-styles';
 import SimpleVoiceAssistant from './SimpleVoiceAssistant';
+import axios from 'axios';
 
 const LiveKitModal = ({ setShowSupport }) => {
   const [isSubmittingName, setIsSubmittingName] = useState(true);
@@ -11,12 +12,11 @@ const LiveKitModal = ({ setShowSupport }) => {
   const getToken = useCallback(async (userName) => {
     try {
       console.log('run');
-      const response = await fetch(
+      const { data: token } = await axios.get(
         `https://web-production-5318.up.railway.app/getToken?name=${encodeURIComponent(
           userName
         )}`
       );
-      const token = await response.text();
       setToken(token);
       setIsSubmittingName(false);
     } catch (error) {

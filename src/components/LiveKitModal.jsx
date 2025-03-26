@@ -12,7 +12,7 @@ const LiveKitModal = ({ setShowSupport }) => {
     try {
       console.log('run');
       const response = await fetch(
-        `https://18.205.24.243/api/getToken?name=${encodeURIComponent(
+        `https://web-production-5318.up.railway.app/getToken?name=${encodeURIComponent(
           userName
         )}`
       );

@@ -13,9 +13,7 @@ const LiveKitModal = ({ setShowSupport }) => {
     try {
       console.log('run');
       const { data: token } = await axios.get(
-        `https://web-production-5318.up.railway.app/getToken?name=${encodeURIComponent(
-          userName
-        )}`
+        `https://18.205.24.243/getToken?name=${encodeURIComponent(userName)}`
       );
       setToken(token);
       setIsSubmittingName(false);

@@ -13,7 +13,9 @@ const LiveKitModal = ({ setShowSupport }) => {
     try {
       console.log('run');
       const { data: token } = await axios.get(
-        `https://18.205.24.243/getToken?name=${encodeURIComponent(userName)}`
+        `https://askaritechnology.com/getToken?name=${encodeURIComponent(
+          userName
+        )}`
       );
       setToken(token);
       setIsSubmittingName(false);
